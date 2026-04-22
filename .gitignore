@@ -1,0 +1,10 @@
+# файлы ядра
+.idea
+/log
+/bitrix
+/upload
+/local/vendor
+
+.htaccess
+.htpasswd
+.htsecure
