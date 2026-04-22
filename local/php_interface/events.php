@@ -11,7 +11,7 @@ EventManager::getInstance()->addEventHandler(
 );
 
 
-function OnBeforeProlog()
+function OnBeforeProlog() : void
 {
     storeVisit();
 }
@@ -41,7 +41,8 @@ function storeVisit () : void
 }
 
 // Функция проверки - нужно ли исключить текущий URL
-function excludeLog($url) {
+function excludeLog($url) : bool
+{
 
     // Список путей, которые не нужно логировать
     $excluded_paths = [

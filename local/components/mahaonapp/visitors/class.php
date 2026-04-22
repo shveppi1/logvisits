@@ -3,14 +3,13 @@
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
 use Bitrix\Main\Loader;
-use Bitrix\Main\Data\Cache;
 
 class VisitorsComponent extends CBitrixComponent
 {
     /**
      * Подготовка параметров компонента
      */
-    public function onPrepareComponentParams($arParams)
+    public function onPrepareComponentParams($arParams) : array
     {
 
         $arParams['CACHE_TIME'] = 3600; // 1 час по умолчанию
@@ -21,7 +20,7 @@ class VisitorsComponent extends CBitrixComponent
     /**
      * Выполнение компонента
      */
-    public function executeComponent()
+    public function executeComponent() : void
     {
         $this->setVisits();
         $this->includeComponentTemplate();
@@ -30,9 +29,9 @@ class VisitorsComponent extends CBitrixComponent
     /**
      * Установка данных в шаблон
      */
-    protected function setVisits()
+    protected function setVisits() : void
     {
-        \Bitrix\Main\Loader::includeModule('highloadblock');
+        Loader::includeModule('highloadblock');
 
         $visits = \Bitrix\Highloadblock\HighloadBlockTable::compileEntity('VISITORS')->getDataClass()::getList([
             'select' => ['*'],
