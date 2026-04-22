@@ -28,7 +28,7 @@ class VisitorsComponent extends CBitrixComponent
     }
 
     /**
-     * Установка даты в шаблон
+     * Установка данных в шаблон
      */
     protected function setVisits()
     {

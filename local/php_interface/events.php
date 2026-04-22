@@ -3,7 +3,7 @@
 
 use Bitrix\Main\EventManager;
 
-// Пролог, проверяем пришел ли город в request и сохраняем
+// Пролог
 EventManager::getInstance()->addEventHandler(
     'main',
     'OnBeforeProlog',
